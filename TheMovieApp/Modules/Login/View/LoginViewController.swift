@@ -37,13 +37,24 @@ class LoginViewController: UIViewController {
     
     @IBAction func buttonPressed(_ sender: Any) {
         
+        if usernameTextField.text?.count == 0 && passwordTextField.text?.count == 0 {
+            UIViewController.showAlert(title: "Incorect data", message: "Please write an username and a password")
+            return
+        } else if passwordTextField.text?.count == 0 {
+            UIViewController.showAlert(title: "Incorect password", message: "Please write a password")
+            return
+        } else if usernameTextField.text?.count == 0 {
+            UIViewController.showAlert(title: "Incorect username", message: "Please write an username")
+            return
+        }
+        
         guard let userName = usernameTextField.text else {
-            print("Enter username")
+            print("Error with username")
             return
         }
         
         guard let password = passwordTextField.text else {
-            print("Enter password")
+            print("Error with password")
             return
         }
         
@@ -70,7 +81,7 @@ class LoginViewController: UIViewController {
                 }
             }
         } else {
-            print("No internet connection")
+            UIViewController.showAlert(title: "No Internet Connection", message: "You don't have internet connection.")
         }
     }
     
