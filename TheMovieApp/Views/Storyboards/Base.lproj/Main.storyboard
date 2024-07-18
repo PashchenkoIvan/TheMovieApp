@@ -111,16 +111,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemPinkColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="g8Q-W3-w8W"/>
+                        <segue destination="q68-db-lGM" kind="relationship" relationship="viewControllers" id="g8Q-W3-w8W"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hjt-8e-GgN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-78" y="14"/>
         </scene>
-        <!--Genres-->
+        <!--General View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="GeneralViewController" id="BYZ-38-t0r" customClass="GeneralViewController" customModule="TheMovieApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -130,11 +131,30 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Genres" image="book" catalog="system" id="VsW-yd-YJb"/>
+                    <navigationItem key="navigationItem" id="qB5-8K-37u"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="-685"/>
+            <point key="canvasLocation" x="1849.6183206106869" y="-685.21126760563379"/>
+        </scene>
+        <!--Genres-->
+        <scene sceneID="Wqa-NX-X4w">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q68-db-lGM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Genres" image="book" catalog="system" id="VsW-yd-YJb"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PSt-t0-zkJ">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Rzv-Gk-dkJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wWq-5q-5Tp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922.90076335877859" y="-685.21126760563379"/>
         </scene>
     </scenes>
     <color key="tintColor" systemColor="systemPinkColor"/>

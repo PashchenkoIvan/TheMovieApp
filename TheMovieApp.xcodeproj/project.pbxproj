@@ -37,6 +37,7 @@
 		63495C7A2C496E5300646941 /* TrendMovieObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63495C782C496E5300646941 /* TrendMovieObj.swift */; };
 		63495C7E2C496F1E00646941 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63495C7D2C496F1E00646941 /* Movie.swift */; };
 		63495C802C496F2700646941 /* MovieListResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63495C7F2C496F2700646941 /* MovieListResponce.swift */; };
+		63495C832C49776200646941 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63495C822C49776200646941 /* StorageService.swift */; };
 		C9A068BEFBF5BA94773B6DA4 /* Pods_TheMovieApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39D8369260290DF95763A181 /* Pods_TheMovieApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		63495C782C496E5300646941 /* TrendMovieObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendMovieObj.swift; sourceTree = "<group>"; };
 		63495C7D2C496F1E00646941 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		63495C7F2C496F2700646941 /* MovieListResponce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListResponce.swift; sourceTree = "<group>"; };
+		63495C822C49776200646941 /* StorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		9FD271770BC23CCC79FF55C0 /* Pods-TheMovieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieApp.release.xcconfig"; path = "Target Support Files/Pods-TheMovieApp/Pods-TheMovieApp.release.xcconfig"; sourceTree = "<group>"; };
 		D5AF377A000B3C1674ED8DFF /* Pods-TheMovieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieApp.debug.xcconfig"; path = "Target Support Files/Pods-TheMovieApp/Pods-TheMovieApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -328,13 +330,13 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		63495C542C49171100646941 /* RequestHelper */ = {
+		63495C542C49171100646941 /* Request */ = {
 			isa = PBXGroup;
 			children = (
 				63495C552C49172600646941 /* RequestHelper.swift */,
 				63495C572C4917C800646941 /* EndpointParams.swift */,
 			);
-			path = RequestHelper;
+			path = Request;
 			sourceTree = "<group>";
 		};
 		63495C652C491AC200646941 /* UserData */ = {
@@ -366,37 +368,38 @@
 		63495C6C2C491F2300646941 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				63495C732C496B2000646941 /* RealmHelper */,
-				63495C702C49506700646941 /* AlertHelper */,
-				63495C6D2C491F2C00646941 /* NetworkHelper */,
-				63495C542C49171100646941 /* RequestHelper */,
+				63495C812C49772D00646941 /* StorageService */,
+				63495C732C496B2000646941 /* Realm */,
+				63495C702C49506700646941 /* Alert */,
+				63495C6D2C491F2C00646941 /* Network */,
+				63495C542C49171100646941 /* Request */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		63495C6D2C491F2C00646941 /* NetworkHelper */ = {
+		63495C6D2C491F2C00646941 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				63495C6E2C491F3B00646941 /* NetworkHelper.swift */,
 			);
-			path = NetworkHelper;
+			path = Network;
 			sourceTree = "<group>";
 		};
-		63495C702C49506700646941 /* AlertHelper */ = {
+		63495C702C49506700646941 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
 				63495C712C49507600646941 /* UIAlert.swift */,
 			);
-			path = AlertHelper;
+			path = Alert;
 			sourceTree = "<group>";
 		};
-		63495C732C496B2000646941 /* RealmHelper */ = {
+		63495C732C496B2000646941 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
 				63495C762C496E2E00646941 /* DataBaseObjects */,
 				63495C742C496B3100646941 /* RealmCRUD.swift */,
 			);
-			path = RealmHelper;
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		63495C762C496E2E00646941 /* DataBaseObjects */ = {
@@ -424,6 +427,14 @@
 				63495C7D2C496F1E00646941 /* Movie.swift */,
 			);
 			path = Movie;
+			sourceTree = "<group>";
+		};
+		63495C812C49772D00646941 /* StorageService */ = {
+			isa = PBXGroup;
+			children = (
+				63495C822C49776200646941 /* StorageService.swift */,
+			);
+			path = StorageService;
 			sourceTree = "<group>";
 		};
 		684583A82344BFEB2AFD0D0A /* Pods */ = {
@@ -558,6 +569,7 @@
 				63495C512C47F69B00646941 /* SearchViewControllerViewModel.swift in Sources */,
 				63495C7E2C496F1E00646941 /* Movie.swift in Sources */,
 				63495C4F2C47F68200646941 /* FavoriteViewControllerViewModel.swift in Sources */,
+				63495C832C49776200646941 /* StorageService.swift in Sources */,
 				63495C4A2C47F62900646941 /* MovieViewControllerViewModel.swift in Sources */,
 				63495C532C47F6BA00646941 /* GeneralViewControllerViewModel.swift in Sources */,
 				63495C582C4917C800646941 /* EndpointParams.swift in Sources */,
