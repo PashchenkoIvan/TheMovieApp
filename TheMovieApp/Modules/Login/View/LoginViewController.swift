@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import KeychainSwift
 
 class LoginViewController: UIViewController {
     
@@ -36,6 +37,37 @@ class LoginViewController: UIViewController {
     
     @IBAction func buttonPressed(_ sender: Any) {
         
+        guard let userName = usernameTextField.text else {
+            print("Enter username")
+            return
+        }
+        
+        guard let password = passwordTextField.text else {
+            print("Enter password")
+            return
+        }
+        
+        LoginViewControllerViewModel.loginUser(username: userName, password: password) { responce in
+            switch responce {
+            case .success(let result):
+                DispatchQueue.main.async {
+                    let encoder = JSONEncoder()
+                    if let encodedData = try? encoder.encode(result) {
+                        
+                        let keychain = KeychainSwift()
+                        keychain.set(encodedData, forKey: "userData")
+                        
+                        let tabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+                        
+                        tabBarController.modalPresentationStyle = .fullScreen
+                        self.present(tabBarController, animated: true, completion: nil)
+                    }
+                }
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
 }
