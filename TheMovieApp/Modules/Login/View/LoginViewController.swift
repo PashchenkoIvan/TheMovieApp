@@ -47,26 +47,30 @@ class LoginViewController: UIViewController {
             return
         }
         
-        LoginViewControllerViewModel.loginUser(username: userName, password: password) { responce in
-            switch responce {
-            case .success(let result):
-                DispatchQueue.main.async {
-                    let encoder = JSONEncoder()
-                    if let encodedData = try? encoder.encode(result) {
-                        
-                        let keychain = KeychainSwift()
-                        keychain.set(encodedData, forKey: "userData")
-                        
-                        let tabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
-                        
-                        tabBarController.modalPresentationStyle = .fullScreen
-                        self.present(tabBarController, animated: true, completion: nil)
+        if NetworkHelper.hasInternetConnection() {
+            LoginViewControllerViewModel.loginUser(username: userName, password: password) { responce in
+                switch responce {
+                case .success(let result):
+                    DispatchQueue.main.async {
+                        let encoder = JSONEncoder()
+                        if let encodedData = try? encoder.encode(result) {
+                            
+                            let keychain = KeychainSwift()
+                            keychain.set(encodedData, forKey: "userData")
+                            
+                            let tabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+                            
+                            tabBarController.modalPresentationStyle = .fullScreen
+                            self.present(tabBarController, animated: true, completion: nil)
+                        }
                     }
+                    
+                case .failure(let error):
+                    print(error)
                 }
-                
-            case .failure(let error):
-                print(error)
             }
+        } else {
+            print("No internet connection")
         }
     }
     
