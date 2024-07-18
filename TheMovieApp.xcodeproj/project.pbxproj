@@ -31,6 +31,7 @@
 		63495C682C491B3200646941 /* RequestTokenStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63495C672C491B3200646941 /* RequestTokenStruct.swift */; };
 		63495C6B2C491B5000646941 /* SessionIdStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63495C6A2C491B5000646941 /* SessionIdStruct.swift */; };
 		63495C6F2C491F3B00646941 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63495C6E2C491F3B00646941 /* NetworkHelper.swift */; };
+		63495C722C49507600646941 /* UIAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63495C712C49507600646941 /* UIAlert.swift */; };
 		C9A068BEFBF5BA94773B6DA4 /* Pods_TheMovieApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39D8369260290DF95763A181 /* Pods_TheMovieApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		63495C672C491B3200646941 /* RequestTokenStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTokenStruct.swift; sourceTree = "<group>"; };
 		63495C6A2C491B5000646941 /* SessionIdStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionIdStruct.swift; sourceTree = "<group>"; };
 		63495C6E2C491F3B00646941 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		63495C712C49507600646941 /* UIAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlert.swift; sourceTree = "<group>"; };
 		9FD271770BC23CCC79FF55C0 /* Pods-TheMovieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieApp.release.xcconfig"; path = "Target Support Files/Pods-TheMovieApp/Pods-TheMovieApp.release.xcconfig"; sourceTree = "<group>"; };
 		D5AF377A000B3C1674ED8DFF /* Pods-TheMovieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieApp.debug.xcconfig"; path = "Target Support Files/Pods-TheMovieApp/Pods-TheMovieApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -354,6 +356,7 @@
 		63495C6C2C491F2300646941 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				63495C702C49506700646941 /* AlertHelper */,
 				63495C6D2C491F2C00646941 /* NetworkHelper */,
 				63495C542C49171100646941 /* RequestHelper */,
 			);
@@ -366,6 +369,14 @@
 				63495C6E2C491F3B00646941 /* NetworkHelper.swift */,
 			);
 			path = NetworkHelper;
+			sourceTree = "<group>";
+		};
+		63495C702C49506700646941 /* AlertHelper */ = {
+			isa = PBXGroup;
+			children = (
+				63495C712C49507600646941 /* UIAlert.swift */,
+			);
+			path = AlertHelper;
 			sourceTree = "<group>";
 		};
 		684583A82344BFEB2AFD0D0A /* Pods */ = {
@@ -511,6 +522,7 @@
 				63495C122C47E00300646941 /* AppDelegate.swift in Sources */,
 				63495C322C47F39D00646941 /* FavoriteViewController.swift in Sources */,
 				63495C5C2C4919A300646941 /* UserDataStruct.swift in Sources */,
+				63495C722C49507600646941 /* UIAlert.swift in Sources */,
 				63495C5A2C49196F00646941 /* ResultUserDataStruct.swift in Sources */,
 				63495C142C47E00300646941 /* SceneDelegate.swift in Sources */,
 			);
