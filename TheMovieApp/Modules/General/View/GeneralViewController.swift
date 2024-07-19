@@ -9,10 +9,23 @@ import UIKit
 
 class GeneralViewController: UIViewController {
 
+    @IBOutlet weak var trendingCollectionView: UICollectionView!
+    
+    var generalLogic: GeneralViewControllerViewModel = GeneralViewControllerViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "Genres"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        generalLogic.updateTrendingMovieArray {
+            self.trendingCollectionView.reloadData()
+        }
+        
     }
 
 
