@@ -10,6 +10,7 @@ import UIKit
 class GeneralViewController: UIViewController {
 
     @IBOutlet weak var trendingCollectionView: UICollectionView!
+    @IBOutlet weak var genresCollectionView: UICollectionView!
     
     var generalLogic: GeneralViewControllerViewModel = GeneralViewControllerViewModel()
     
@@ -24,6 +25,10 @@ class GeneralViewController: UIViewController {
         
         generalLogic.updateTrendingMovieArray {
             self.trendingCollectionView.reloadData()
+        }
+        
+        generalLogic.updateGenresArray {
+            self.genresCollectionView.reloadData()
         }
         
     }
